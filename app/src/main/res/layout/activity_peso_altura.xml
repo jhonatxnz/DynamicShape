@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".genero">
-
+    tools:context=".PesoAltura">
     <ImageView
 
         android:layout_width="61dp"
@@ -26,50 +25,53 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Gênero"
+        android:gravity="center"
+        android:text="Preencha as                informações abaixo:"
         android:textColor="@color/black"
-        android:textSize="82px"
+        android:textSize="72px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.178" />
+        app:layout_constraintVertical_bias="0.231" />
+
+    <EditText
+        android:layout_width="700px"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:backgroundTint="@color/gray"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Peso"
+        android:padding="30px"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="265dp" />
+
+    <EditText
+        android:layout_width="700px"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:backgroundTint="@color/gray"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Altura"
+        android:padding="30px"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="330dp" />
 
     <Button
-        android:layout_width="65dp"
-        android:layout_height="212dp"
-        android:backgroundTint="@color/gray"
-
-        android:text="F
-        e
-        m
-        i
-        n
-        i
-        n
-        o"
+        android:layout_width="163dp"
+        android:layout_height="48dp"
+        android:backgroundTint="@color/orange"
+        android:text="Avançar"
         android:textColor="@color/white"
-        tools:layout_editor_absoluteX="116dp"
-        tools:layout_editor_absoluteY="236dp" />
-
-    <Button
-        android:layout_width="65dp"
-        android:layout_height="212dp"
-        android:backgroundTint="@color/gray"
-
-        android:text="M
-        a
-        s
-        c
-        u
-        l
-        i
-        n
-        o"
-        android:textColor="@color/white"
-        tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="236dp" />
+        tools:layout_editor_absoluteX="124dp"
+        tools:layout_editor_absoluteY="407dp" />
 
     <ImageView
 
@@ -86,5 +88,4 @@
         app:srcCompat="@drawable/corpos"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="468dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
