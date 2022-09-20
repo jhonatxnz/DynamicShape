@@ -17,40 +17,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
+<!--        <TableRow-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
 
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="99dp"
-                android:layout_height="50dp"
-                android:adjustViewBounds="true"
-                android:background=""
-                android:scaleType="centerInside"
-                android:src="@drawable/menu"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.266"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.418" />
+<!--            <ImageButton-->
+<!--                android:id="@+id/imageButton"-->
+<!--                android:layout_width="99dp"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:background=""-->
+<!--                android:scaleType="centerInside"-->
+<!--                android:src="@drawable/menu"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintHorizontal_bias="0.266"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                app:layout_constraintVertical_bias="0.418" />-->
 
-            <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="198dp"
-                android:layout_height="match_parent"
-                app:srcCompat="@drawable/logo" />
+<!--            <ImageView-->
+<!--                android:id="@+id/imageView11"-->
+<!--                android:layout_width="198dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                app:srcCompat="@drawable/logo" />-->
 
-            <ImageButton
-                android:id="@+id/ed"
-                android:layout_width="52dp"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:background=""
-                android:scaleType="centerInside"
-                android:src="@drawable/divredonda" />
-        </TableRow>
+<!--            <ImageButton-->
+<!--                android:id="@+id/ed"-->
+<!--                android:layout_width="52dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:adjustViewBounds="true"-->
+<!--                android:background=""-->
+<!--                android:scaleType="centerInside"-->
+<!--                android:src="@drawable/divredonda" />-->
+<!--        </TableRow>-->
+
+
     </TableLayout>
 
     <TextView
@@ -99,7 +101,7 @@
 
         android:layout_marginTop="420dp"
         android:backgroundTint="@color/gray"
-        android:text="Janeiro"
+        android:text="Fevereiro"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.511"
@@ -113,7 +115,7 @@
 
         android:layout_marginTop="420dp"
         android:backgroundTint="@color/gray"
-        android:text="Janeiro"
+        android:text="Março"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.945"
@@ -146,6 +148,17 @@
         app:layout_constraintTop_toTopOf="@+id/tableLayout"
         app:layout_constraintVertical_bias="0.932"
         app:srcCompat="@drawable/emagrecer" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="327dp"
+        android:layout_height="217dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.194"
+        app:srcCompat="@drawable/academia" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

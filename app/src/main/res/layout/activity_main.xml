@@ -11,7 +11,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="___________________________"
+        android:text="___________________________________"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,7 +47,7 @@
         app:srcCompat="@drawable/esteira" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/edtEmail"
         android:layout_width="700px"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext"
@@ -63,7 +63,7 @@
         app:layout_constraintVertical_bias="0.419" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/edtSenha"
         android:layout_width="700px"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext"
@@ -79,7 +79,7 @@
         app:layout_constraintVertical_bias="0.523" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnAvancar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
@@ -88,13 +88,13 @@
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.61"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="0.692" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvCadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Cadastrar-me"

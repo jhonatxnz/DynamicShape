@@ -46,7 +46,7 @@
         app:srcCompat="@drawable/esteira" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/edtEmail"
         android:layout_width="700px"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext"
@@ -62,7 +62,7 @@
         app:layout_constraintVertical_bias="0.441" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/edtNome"
         android:layout_width="700px"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext"
@@ -78,7 +78,7 @@
         app:layout_constraintVertical_bias="0.532" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/edtSenha"
         android:layout_width="700px"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext"
@@ -95,7 +95,7 @@
 
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/edtIdade"
         android:layout_width="700px"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext"
@@ -111,7 +111,7 @@
         app:layout_constraintVertical_bias="0.714" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/btnAvancar"
         android:layout_width="86dp"
         android:layout_height="40dp"
         android:adjustViewBounds="true"
@@ -126,7 +126,7 @@
         app:layout_constraintVertical_bias="0.824" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tvLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
