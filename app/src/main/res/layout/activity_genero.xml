@@ -7,8 +7,7 @@
     tools:context=".genero">
 
     <ImageView
-
-        android:id="@+id/imageView5"
+        android:id="@+id/imgSeta"
         android:layout_width="61dp"
         android:layout_height="62dp"
         android:layout_marginTop="16dp"
@@ -47,6 +46,7 @@
         app:layout_constraintVertical_bias="0.177" />
 
     <Button
+        android:id="@+id/btnFeminino"
         android:layout_width="65dp"
         android:layout_height="212dp"
         android:layout_marginTop="236dp"
@@ -67,6 +67,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/btnMasculino"
         android:layout_width="65dp"
         android:layout_height="212dp"
 

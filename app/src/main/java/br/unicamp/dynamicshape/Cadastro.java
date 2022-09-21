@@ -14,12 +14,11 @@ public class Cadastro extends AppCompatActivity {
     EditText edtEmail,edtNome,edtSenha,edtIdade;
     TextView tvLogin;
     Button btnAvancar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
-
-        Intent intent = getIntent();
 
         edtEmail = findViewById(R.id.edtEmail);
         edtNome = findViewById(R.id.edtNome);
@@ -40,6 +39,13 @@ public class Cadastro extends AppCompatActivity {
                 parametros.putString("chaveIdade",edtIdade.getText().toString());
 
                 intent.putExtras(parametros);
+                startActivity(intent);
+            }
+        });
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Cadastro.this,MainActivity.class);
                 startActivity(intent);
             }
         });

@@ -56,26 +56,9 @@
         android:padding="30px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.441" />
-
-    <EditText
-        android:id="@+id/edtNome"
-        android:layout_width="700px"
-        android:layout_height="wrap_content"
-        android:background="@drawable/edittext"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Digite seu nome"
-        android:padding="30px"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.532" />
 
     <EditText
         android:id="@+id/edtSenha"
@@ -88,11 +71,9 @@
         android:padding="30px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.624" />
-
 
     <EditText
         android:id="@+id/edtIdade"
@@ -105,25 +86,38 @@
         android:padding="30px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.714" />
 
-    <ImageButton
-        android:id="@+id/btnAvancar"
-        android:layout_width="86dp"
-        android:layout_height="40dp"
-        android:adjustViewBounds="true"
-        android:backgroundTint="@color/white"
-        android:scaleType="centerInside"
-        android:src="@drawable/seta"
+    <EditText
+        android:id="@+id/edtNome"
+        android:layout_width="700px"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Digite seu nome"
+        android:padding="30px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.824" />
+        app:layout_constraintVertical_bias="0.532" />
+
+
+    <Button
+        android:id="@+id/btnAvancar"
+        android:layout_width="219dp"
+        android:layout_height="59dp"
+        android:backgroundTint="@color/white"
+        android:text="Avançar"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.852" />
 
     <TextView
         android:id="@+id/tvLogin"
@@ -137,6 +131,6 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.927" />
+        app:layout_constraintVertical_bias="0.93" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 <!--android:id="@+id/imageView"-->

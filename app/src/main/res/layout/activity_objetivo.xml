@@ -8,7 +8,7 @@
 
     <ImageView
 
-        android:id="@+id/imageView10"
+        android:id="@+id/imgSeta"
         android:layout_width="61dp"
         android:layout_height="62dp"
         android:rotation="180"
@@ -47,7 +47,7 @@
         app:layout_constraintVertical_bias="0.256" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/edtDuracao"
         android:layout_width="700px"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext"
@@ -65,7 +65,7 @@
         app:layout_constraintVertical_bias="0.532" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnAvancar"
         android:layout_width="163dp"
         android:layout_height="48dp"
         android:layout_marginTop="436dp"
@@ -90,7 +90,6 @@
 
     <ImageView
 
-        android:id="@+id/imageView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="452dp"
@@ -101,7 +100,7 @@
         app:srcCompat="@drawable/corpos" />
 
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/imgEmagrecer"
         android:layout_width="169dp"
         android:layout_height="94dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -113,7 +112,7 @@
         app:srcCompat="@drawable/emagrecer" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/imgGanharMusculo"
         android:layout_width="189dp"
         android:layout_height="96dp"
         app:layout_constraintBottom_toBottomOf="parent"

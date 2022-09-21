@@ -1,7 +1,6 @@
 package br.unicamp.dynamicshape;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,16 +22,24 @@ public class MainActivity extends AppCompatActivity {
         edtSenha = findViewById(R.id.edtSenha);
         tvCadastrar = findViewById(R.id.tvCadastrar);
         btnAvancar = findViewById(R.id.btnAvancar);
+
         btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,Cadastro.class);
+                //verificar se campos != null
+                Intent intent = new Intent(MainActivity.this,Home.class);
                 Bundle parametros = new Bundle();
 
-                //levar o usuario para a outra tela
+                //precisa levar o objeto usuario para a outra tela
                 startActivity(intent);
             }
         });
-
+        tvCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,Cadastro.class);
+                startActivity(intent);
+            }
+        });
     }
 }

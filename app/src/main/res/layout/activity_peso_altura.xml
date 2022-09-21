@@ -7,7 +7,7 @@
     tools:context=".PesoAltura">
 
     <ImageView
-
+        android:id="@+id/imgSeta"
         android:layout_width="61dp"
         android:layout_height="62dp"
         android:rotation="180"
@@ -46,7 +46,7 @@
         app:layout_constraintVertical_bias="0.228" />
 
     <EditText
-        android:id="@+id/editText8"
+        android:id="@+id/edtPesoo"
         android:layout_width="700px"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext"
@@ -64,7 +64,7 @@
         app:layout_constraintVertical_bias="0.428" />
 
     <EditText
-        android:id="@+id/editText7"
+        android:id="@+id/edtAltura"
         android:layout_width="700px"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext"
@@ -83,7 +83,7 @@
         app:layout_constraintVertical_bias="0.531" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnAvancar"
         android:layout_width="163dp"
         android:layout_height="48dp"
         android:layout_marginTop="436dp"
