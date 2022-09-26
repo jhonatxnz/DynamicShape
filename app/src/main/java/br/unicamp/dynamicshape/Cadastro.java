@@ -30,7 +30,7 @@ public class Cadastro extends AppCompatActivity {
         btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Cadastro.this,genero.class);
+                Intent intent = new Intent(Cadastro.this, Genero.class);
                 Bundle parametros = new Bundle();
 
                 parametros.putString("chaveEmail",edtEmail.getText().toString());

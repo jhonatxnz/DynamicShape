@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-public class genero extends AppCompatActivity {
+public class Genero extends AppCompatActivity {
 
     ImageView seta;
     Button btnFeminino,btnMasculino;
@@ -36,7 +36,7 @@ public class genero extends AppCompatActivity {
         btnFeminino.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(genero.this,PesoAltura.class);
+                Intent intent = new Intent(Genero.this,PesoAltura.class);
                 parametros.putString("chaveFeminino",btnFeminino.getText().toString());
 
                 intent.putExtras(parametros);
@@ -47,7 +47,7 @@ public class genero extends AppCompatActivity {
         btnMasculino.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(genero.this,PesoAltura.class);
+                Intent intent = new Intent(Genero.this,PesoAltura.class);
                 parametros.putString("chaveMasculino",btnMasculino.getText().toString());
 
                 intent.putExtras(parametros);
@@ -57,7 +57,7 @@ public class genero extends AppCompatActivity {
         seta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(genero.this,Cadastro.class);
+                Intent intent = new Intent(Genero.this,Cadastro.class);
                 startActivity(intent);
             }
         });

@@ -43,7 +43,7 @@ public class PesoAltura extends AppCompatActivity {
         seta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(PesoAltura.this,genero.class);
+                Intent intent = new Intent(PesoAltura.this, Genero.class);
                 startActivity(intent);
             }
         });

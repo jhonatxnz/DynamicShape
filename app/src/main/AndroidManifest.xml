@@ -32,7 +32,7 @@
             android:name=".PesoAltura"
             android:exported="false" />
         <activity
-            android:name=".genero"
+            android:name=".Genero"
             android:exported="false" />
         <activity
             android:name=".Cadastro"
