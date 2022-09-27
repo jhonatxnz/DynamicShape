@@ -8,8 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.List;
 
 public class Cadastro extends AppCompatActivity {
+    private List<Usuario> users;
 
     EditText edtEmail,edtNome,edtSenha,edtIdade;
     TextView tvLogin;
@@ -31,15 +35,22 @@ public class Cadastro extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Cadastro.this, Genero.class);
-                Bundle parametros = new Bundle();
 
-                parametros.putString("chaveEmail",edtEmail.getText().toString());
-                parametros.putString("chaveNome",edtNome.getText().toString());
-                parametros.putString("chaveSenha",edtSenha.getText().toString());
-                parametros.putString("chaveIdade",edtIdade.getText().toString());
+                if(edtEmail.getText().toString() == ""||
+                   edtNome.getText().toString()  == ""||
+                   edtSenha.getText().toString() == "" ||
+                   edtIdade.getText().length() == 0){
+                   Toast.makeText(Cadastro.this, "Campos vazios", Toast.LENGTH_LONG).show();
+                }else{
+                    Usuario usuario = new Usuario();
+                    usuario.setEmail(edtEmail.getText().toString());
+                    usuario.setNome(edtNome.getText().toString());
+                    usuario.setSenha(edtSenha.getText().toString());
+                    usuario.setIdade(Integer.parseInt(edtIdade.getText().toString()));
 
-                intent.putExtras(parametros);
-                startActivity(intent);
+                    intent.putExtra("usuario", usuario);
+                    startActivity(intent);
+                }
             }
         });
         tvLogin.setOnClickListener(new View.OnClickListener() {

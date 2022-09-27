@@ -17,6 +17,8 @@ public class Usuario implements Serializable{
     private String email;
     @SerializedName("peso")
     private Float peso;
+    @SerializedName("altura")
+    private Float altura;
     @SerializedName("senha")
     private String senha;
     @SerializedName("imagem")
@@ -25,9 +27,11 @@ public class Usuario implements Serializable{
     private Integer genero;
     @SerializedName("objetivo")
     private Integer objetivo;
+    @SerializedName("tempo")
+    private Float tempo;
 
 
-    public Usuario(String id, String nome, Integer idade, String telefone, String email, Float peso, String senha, String imagem, Integer genero, Integer objetivo) {
+    public Usuario(String id, String nome, Integer idade, String telefone, String email, Float peso,Float altura, String senha, String imagem, Integer genero, Integer objetivo,Float tempo) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
@@ -38,7 +42,12 @@ public class Usuario implements Serializable{
         this.imagem = imagem;
         this.genero = genero;
         this.objetivo = objetivo;
+        this.altura = altura;
+        this.tempo = tempo;
     }
+
+    public Usuario() {}
+
 
     public String getId() {
         return id;
@@ -88,6 +97,14 @@ public class Usuario implements Serializable{
         this.peso = peso;
     }
 
+    public Float getAltura() {
+        return altura;
+    }
+
+    public void setAltura(Float altura) {
+        this.altura = altura;
+    }
+
     public String getSenha() {
         return senha;
     }
@@ -104,9 +121,7 @@ public class Usuario implements Serializable{
         this.imagem = imagem;
     }
 
-    public Integer getGenero() {
-        return genero;
-    }
+    public Integer getGenero() {return genero;}
 
     public void setGenero(Integer genero) {
         this.genero = genero;
@@ -118,5 +133,11 @@ public class Usuario implements Serializable{
 
     public void setObjetivo(Integer objetivo) {
         this.objetivo = objetivo;
+    }
+
+    public Float getTempo() {return tempo;}
+
+    public void setTempo(Float tempo) {
+        this.tempo = tempo;
     }
 }

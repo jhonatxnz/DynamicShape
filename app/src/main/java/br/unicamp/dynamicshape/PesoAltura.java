@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class PesoAltura extends AppCompatActivity {
 
@@ -28,16 +29,21 @@ public class PesoAltura extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle parametros = intent.getExtras();
 
+        Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
+
         btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PesoAltura.this,Objetivo.class);
-                Bundle parametros = new Bundle();
-                parametros.putString("chavePeso",edtPeso.getText().toString());
-                parametros.putString("chaveAltura",edtAltura.getText().toString());
+                if(edtPeso.getText().length() == 0 || edtAltura.getText().length() == 0){
+                    Toast.makeText(PesoAltura.this, "Campos vazios", Toast.LENGTH_LONG).show();
+                }else{
+                    usuario.setPeso(Float.parseFloat(edtPeso.getText().toString()));
+                    usuario.setAltura(Float.parseFloat(edtAltura.getText().toString()));
 
-                intent.putExtras(parametros);
-                startActivity(intent);
+                    intent.putExtra("usuario", usuario);
+                    startActivity(intent);
+                }
             }
         });
         seta.setOnClickListener(new View.OnClickListener() {

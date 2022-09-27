@@ -8,13 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class Objetivo extends AppCompatActivity {
 
     ImageView seta,imgEmagrecer,imgGanharMusculo;
     EditText edtDuracao;
     Button btnAvancar;
-    String Objetivo = "";
+    Integer Objetivo = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class Objetivo extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle parametros = intent.getExtras();
+        Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
 
         imgEmagrecer.setOnClickListener(this::onClick);
         imgGanharMusculo.setOnClickListener(this::onClick);
@@ -38,13 +40,32 @@ public class Objetivo extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Objetivo.this,MainActivity.class);
-                Bundle parametros = new Bundle();
-                parametros.putString("chaveObjetivo",Objetivo);
-                imgEmagrecer.isSelected();
-                parametros.putString("chaveDuracao",edtDuracao.getText().toString());
 
-                intent.putExtras(parametros);
-                startActivity(intent);
+                usuario.setObjetivo(Objetivo);
+
+
+                if(edtDuracao.getText().length() == 0 || Objetivo < 0){
+                    Toast.makeText(Objetivo.this, "Selecione o objetivo/coloque o tempo", Toast.LENGTH_LONG).show();
+                }
+                else
+                {
+                    usuario.setTempo(Float.parseFloat(edtDuracao.getText().toString()));
+
+                    intent.putExtra("usuario", usuario);
+                    System.err.println("Email: "+usuario.getEmail());
+                    System.err.println("Nome: "+usuario.getNome());
+                    System.err.println("Idade: "+usuario.getIdade());
+                    System.err.println("Telefone: "+usuario.getTelefone());
+                    System.err.println("Peso: "+usuario.getPeso());
+                    System.err.println("Altura: "+usuario.getAltura());
+                    System.err.println("Senha: "+usuario.getSenha());
+                    System.err.println("Imagem: "+usuario.getImagem());
+                    System.err.println("Genero: "+usuario.getGenero());
+                    System.err.println("Objetivo: "+usuario.getObjetivo());
+                    System.err.println("Tempo: "+usuario.getTempo());
+
+                    startActivity(intent);
+                }
             }
         });
         seta.setOnClickListener(new View.OnClickListener() {
@@ -59,10 +80,10 @@ public class Objetivo extends AppCompatActivity {
     private void onClick(View view) {
         switch (view.getId()){
             case R.id.imgEmagrecer:
-                Objetivo = "Emagrecer";
+                Objetivo = 2;
                 break;
             case R.id.imgGanharMusculo:
-                Objetivo = "Ganhar Musculo";
+                Objetivo = 1;
                 break;
         }
     }

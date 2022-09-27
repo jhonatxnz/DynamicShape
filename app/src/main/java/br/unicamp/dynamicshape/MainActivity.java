@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,12 +27,13 @@ public class MainActivity extends AppCompatActivity {
         btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //verificar se campos != null
                 Intent intent = new Intent(MainActivity.this,Home.class);
-                Bundle parametros = new Bundle();
-
-                //precisa levar o objeto usuario para a outra tela
-                startActivity(intent);
+                if(edtEmail.getText().toString() == ""||
+                   edtSenha.getText().toString()  == ""){
+                    Toast.makeText(MainActivity.this, "Campos vazios", Toast.LENGTH_LONG).show();
+                }else {
+                    startActivity(intent);
+                }
             }
         });
         tvCadastrar.setOnClickListener(new View.OnClickListener() {

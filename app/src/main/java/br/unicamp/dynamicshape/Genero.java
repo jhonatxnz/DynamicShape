@@ -22,24 +22,20 @@ public class Genero extends AppCompatActivity {
         btnFeminino = findViewById(R.id.btnFeminino);
         btnMasculino = findViewById(R.id.btnMasculino);
 
-        Intent intent = getIntent();
-        Bundle parametros = intent.getExtras();
+        //Intent intent = getIntent();
+        //Bundle parametros = intent.getExtras();
 
-        //falta getter and setter fazendo cagada
-        String email = parametros.getString("chaveEmail");
-        String nome = parametros.getString("chaveNome");
-        String senha = parametros.getString("chaveSenha");
-        String idade = parametros.getString("chaveIdade");
 
-        System.out.println("Email:" + email);
+        Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
 
         btnFeminino.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Genero.this,PesoAltura.class);
-                parametros.putString("chaveFeminino",btnFeminino.getText().toString());
+                usuario.setGenero(2); // Rever
+                //parametros.putString("chaveFeminino",btnFeminino.getText().toString());
 
-                intent.putExtras(parametros);
+                intent.putExtra("usuario", usuario);
                 startActivity(intent);
 
             }
@@ -48,9 +44,10 @@ public class Genero extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Genero.this,PesoAltura.class);
-                parametros.putString("chaveMasculino",btnMasculino.getText().toString());
+                usuario.setGenero(1); // Rever
+                //parametros.putString("chaveFeminino",btnFeminino.getText().toString());
 
-                intent.putExtras(parametros);
+                intent.putExtra("usuario", usuario);
                 startActivity(intent);
             }
         });
