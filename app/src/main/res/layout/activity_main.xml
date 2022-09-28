@@ -60,10 +60,12 @@
         app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.419" />
+        app:layout_constraintVertical_bias="0.419"
+        android:maxLength="30"/>
 
     <EditText
         android:id="@+id/edtSenha"
+        android:inputType="textPassword"
         android:layout_width="700px"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext"
@@ -76,7 +78,8 @@
         app:layout_constraintHorizontal_bias="0.576"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.523" />
+        app:layout_constraintVertical_bias="0.523"
+        android:maxLength="12"/>
 
     <Button
         android:id="@+id/btnAvancar"

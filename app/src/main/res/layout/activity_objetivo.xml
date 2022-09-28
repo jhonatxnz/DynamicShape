@@ -48,13 +48,14 @@
 
     <EditText
         android:id="@+id/edtDuracao"
+        android:inputType="number"
         android:layout_width="700px"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext"
         android:backgroundTint="@color/gray"
         android:ems="10"
         android:gravity="center"
-        android:hint="Tempo de duração"
+        android:hint="Tempo de duração(meses)"
         android:padding="30px"
         android:textColor="@color/white"
         android:textColorHint="@color/white"
@@ -62,7 +63,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.532" />
+        app:layout_constraintVertical_bias="0.532"
+        android:maxLength="2"/>
 
     <Button
         android:id="@+id/btnAvancar"
