@@ -9,8 +9,8 @@ create table Genero(
 create table Usuario (
 [idConta] INT PRIMARY KEY NOT NULL IDENTITY(1,1),
 [nome] VARCHAR (30) NULL,
-[idade] CHAR (3) NULL,
-[telefone] CHAR (11) NULL,
+[idade] INT NULL,
+[telefone] VARCHAR (11) NULL,
 [email] VARCHAR (40) NULL,
 [peso] FLOAT (5) NULL,
 [senha] VARCHAR (20),
@@ -18,6 +18,7 @@ imagem nvarchar(MAX) NULL,
 idGenero int foreign key references Genero(idGenero),
 idObjetivo int foreign key references Objetivo(idObjetivo)
 )
+
 
 
 --2
