@@ -81,8 +81,8 @@ insert into Usuario([nome], [idade], [telefone], [email], [peso], [senha], [imag
 
 
 --------------
-UPDATE Usuario SET [nome]= 'Cleyton' WHERE [idConta]=3;
-
+UPDATE Usuario SET [nome]= 'Cleyton',[idade]= 12 WHERE [idConta]=3;
+UPDATE Usuario SET [nome] = 'sda',idade = 1,telefone ='1' ,email = 'dsa',peso = 1.2,senha = 'wdas',idGenero = 2,idObjetivo = 2 WHERE idConta = 3
 select e.nome 
 from 
 Exercicios as e,
@@ -90,3 +90,5 @@ Usuario as u
 where 
 u.nome = 'Jurema' and
 u.idObjetivo = e.idObjetivo
+
+DELETE FROM Usuario WHERE idConta =1
