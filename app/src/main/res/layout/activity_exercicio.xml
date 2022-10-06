@@ -10,6 +10,7 @@
 
 
     <ImageView
+        android:id="@+id/imgSeta"
         android:layout_width="61dp"
         android:layout_height="62dp"
         android:rotation="180"

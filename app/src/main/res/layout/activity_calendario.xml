@@ -8,6 +8,7 @@
     android:background="@color/gray">
 
     <ImageView
+        android:id="@+id/imgSeta"
         android:layout_width="61dp"
         android:layout_height="62dp"
         android:rotation="180"
@@ -20,16 +21,19 @@
         app:srcCompat="@drawable/seta" />
 
     <Button
-        android:id="@+id/button4"
-        android:layout_width="279dp"
-        android:layout_height="256dp"
-        android:backgroundTint="@color/white"
+        android:id="@+id/btnAdicionarImg"
+        android:layout_width="287dp"
+        android:layout_height="255dp"
+        android:backgroundTint="@color/grayy"
+        android:text="+"
         android:textColor="@color/white"
+        android:textSize="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.165" />
+        app:layout_constraintVertical_bias="0.207" />
 
     <CalendarView
         android:layout_width="285dp"

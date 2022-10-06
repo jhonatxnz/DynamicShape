@@ -7,18 +7,18 @@
     tools:context=".Home"
     android:background="@color/grayy">
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Exercicios para voce fazer"
-        android:textColor="@color/black"
-        android:textSize="42px"
+    <ImageView
+
+        android:id="@+id/imageView5"
+        android:layout_width="249dp"
+        android:layout_height="85dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.772" />
+        app:layout_constraintVertical_bias="0.024"
+        app:srcCompat="@drawable/logo" />
+    
 
     <TextView
         android:id="@+id/textView3"
@@ -149,7 +149,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnMes"
         android:layout_width="116dp"
         android:layout_height="106dp"
 
@@ -161,11 +161,21 @@
         app:layout_constraintHorizontal_bias="0.054"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exercicios para voce fazer"
+        android:textColor="@color/black"
+        android:textSize="42px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.772" />
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/imgExercicios"
         android:layout_width="match_parent"
-
         android:layout_height="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
