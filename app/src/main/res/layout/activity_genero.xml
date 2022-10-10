@@ -92,7 +92,7 @@
 
         android:layout_width="414dp"
         android:layout_height="252dp"
-        android:layout_marginTop="548dp"
+        android:layout_marginTop="572dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
@@ -103,8 +103,9 @@
 
         android:layout_width="417dp"
         android:layout_height="410dp"
-        android:layout_marginTop="432dp"
+        android:layout_marginTop="452dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/corpos" />

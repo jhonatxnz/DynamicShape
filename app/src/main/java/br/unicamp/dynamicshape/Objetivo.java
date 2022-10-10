@@ -3,6 +3,7 @@ package br.unicamp.dynamicshape;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -74,9 +75,14 @@ public class Objetivo extends AppCompatActivity {
     private void onClick(View view) {
         switch (view.getId()){
             case R.id.imgEmagrecer:
+                imgEmagrecer.setBackgroundColor(Color.parseColor("#FF0000"));
+                imgGanharMusculo.setBackgroundColor(Color.parseColor("#000000"));
                 Objetivo = 2;
+
                 break;
             case R.id.imgGanharMusculo:
+                imgGanharMusculo.setBackgroundColor(Color.parseColor("#FF0000"));
+                imgEmagrecer.setBackgroundColor(Color.parseColor("#000000"));
                 Objetivo = 1;
                 break;
         }
