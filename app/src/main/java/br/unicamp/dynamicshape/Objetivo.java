@@ -10,7 +10,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class Objetivo extends AppCompatActivity {
+
 
     ImageView seta,imgEmagrecer,imgGanharMusculo;
     EditText edtDuracao;
@@ -29,19 +34,18 @@ public class Objetivo extends AppCompatActivity {
         btnAvancar = findViewById(R.id.btnAvancar);
 
 
-        Intent intent = getIntent();
-        Bundle parametros = intent.getExtras();
-        Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
-
         imgEmagrecer.setOnClickListener(this::onClick);
         imgGanharMusculo.setOnClickListener(this::onClick);
 
-       btnAvancar.setOnClickListener(new View.OnClickListener() {
+        Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
+
+        btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Objetivo.this,MainActivity.class);
-
                 usuario.setObjetivo(Objetivo);
+
+                incluirUser(usuario);
+                Intent intent = new Intent(Objetivo.this,MainActivity.class);
 
 
                 if(edtDuracao.getText().length() == 0 || Objetivo < 0){
@@ -52,17 +56,7 @@ public class Objetivo extends AppCompatActivity {
                     usuario.setTempo(Float.parseFloat(edtDuracao.getText().toString()));
 
                     intent.putExtra("usuario", usuario);
-                    System.err.println("Email: "+usuario.getEmail());
-                    System.err.println("Nome: "+usuario.getNome());
-                    System.err.println("Idade: "+usuario.getIdade());
-                    System.err.println("Telefone: "+usuario.getTelefone());
-                    System.err.println("Peso: "+usuario.getPeso());
-                    System.err.println("Altura: "+usuario.getAltura());
-                    System.err.println("Senha: "+usuario.getSenha());
-                    System.err.println("Imagem: "+usuario.getImagem());
-                    System.err.println("Genero: "+usuario.getGenero());
-                    System.err.println("Objetivo: "+usuario.getObjetivo());
-                    System.err.println("Tempo: "+usuario.getTempo());
+
 
                     startActivity(intent);
                 }
@@ -86,5 +80,27 @@ public class Objetivo extends AppCompatActivity {
                 Objetivo = 1;
                 break;
         }
+    }
+
+    private void incluirUser(Usuario usuario) {
+        Service service = RetrofitConfig.getRetrofitInstance().create(Service.class);
+        Call<Usuario> call = service.incluirUsuario(usuario);
+
+        call.enqueue(new Callback<Usuario>() {
+            @Override
+            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                if(response.isSuccessful()){
+                    startActivity(new Intent(Objetivo.this, MainActivity.class));
+                }
+                else{
+                    Toast.makeText(Objetivo.this, "Erro na inclusão", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Usuario> call, Throwable t) {
+                Toast.makeText(Objetivo.this, "Ocorre um erro de requisição no Node: " + t.toString(), Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
