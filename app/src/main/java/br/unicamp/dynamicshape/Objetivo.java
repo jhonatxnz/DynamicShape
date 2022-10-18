@@ -23,6 +23,7 @@ public class Objetivo extends AppCompatActivity {
     Button btnAvancar;
     Integer Objetivo = -1;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,10 +44,12 @@ public class Objetivo extends AppCompatActivity {
         btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                usuario.setObjetivo(Objetivo);
-
-                incluirUser(usuario);
                 Intent intent = new Intent(Objetivo.this,MainActivity.class);
+                usuario.setObjetivo(Objetivo);
+                usuario.setTempo(Float.parseFloat(edtDuracao.getText().toString()));
+                intent.putExtra("usuario", usuario);
+                incluirUser(usuario);
+
 
 
                 if(edtDuracao.getText().length() == 0 || Objetivo < 0){
@@ -57,7 +60,6 @@ public class Objetivo extends AppCompatActivity {
                     usuario.setTempo(Float.parseFloat(edtDuracao.getText().toString()));
 
                     intent.putExtra("usuario", usuario);
-
 
                     startActivity(intent);
                 }

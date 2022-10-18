@@ -10,9 +10,10 @@ create table Usuario (
 [idConta] INT PRIMARY KEY NOT NULL IDENTITY(1,1),
 [nome] VARCHAR (30) NULL,
 [idade] INT NULL,
-[telefone] VARCHAR (11) NULL,
+[tempo] INT NULL,
 [email] VARCHAR (40) NULL,
 [peso] FLOAT (5) NULL,
+[altura] FLOAT (5) NULL,
 [senha] VARCHAR (20),
 imagem nvarchar(MAX) NULL,
 idGenero int foreign key references Genero(idGenero),
@@ -75,9 +76,7 @@ insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetiv
 
 
 --5 USUÁRIO
-insert into Usuario([nome], [idade], [telefone], [email], [peso], [senha], [imagem], [idGenero], [idObjetivo]) values ('Valentina', 18, '19985874521','bestiuys@gmail.com', '65.6', 'senhablu', 'null', 1, 1 ) 
-insert into Usuario([nome], [idade], [telefone], [email], [peso], [senha], [imagem], [idGenero], [idObjetivo]) values ('Jurema', 64, '19987456598','tiajuris@gmail.com', '77.9', 'jurisdj', 'null', 2, 2 ) 
-insert into Usuario([nome], [idade], [telefone], [email], [peso], [senha], [imagem], [idGenero], [idObjetivo]) values ('Cleyton', 64, '19984758565','cleytitinhodabm.com', '50', 'cleytinho123', 'null', 1, 2 ) 
+insert into Usuario([nome], [idade], [tempo], [email], [peso],[altura], [senha], [imagem], [idGenero], [idObjetivo]) values ('Valentina', 18, 1,'bestiuys@gmail.com', '65.6','1.6', 'senhablu', 'null', 1, 1 ) 
 
 
 --------------
@@ -91,4 +90,7 @@ where
 u.nome = 'Jurema' and
 u.idObjetivo = e.idObjetivo
 
+Select * from Usuario where email = 'dsada@gmail.com'
 DELETE FROM Usuario WHERE idConta =1
+
+drop table Usuario

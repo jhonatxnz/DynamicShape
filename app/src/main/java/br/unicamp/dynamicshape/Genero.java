@@ -48,6 +48,7 @@ public class Genero extends AppCompatActivity {
                 //parametros.putString("chaveFeminino",btnFeminino.getText().toString());
 
                 intent.putExtra("usuario", usuario);
+                System.err.println("Genero"+ usuario.getGenero());
                 startActivity(intent);
             }
         });
