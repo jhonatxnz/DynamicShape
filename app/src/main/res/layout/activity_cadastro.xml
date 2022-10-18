@@ -54,13 +54,14 @@
         android:ems="10"
         android:gravity="center"
         android:hint="Digite seu email"
+        android:maxLength="30"
         android:padding="30px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.441"
-        android:maxLength="30"/>
+        app:layout_constraintVertical_bias="0.444" />
+
     <EditText
         android:id="@+id/edtNome"
         android:layout_width="700px"

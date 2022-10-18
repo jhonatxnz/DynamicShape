@@ -14,6 +14,10 @@ public class Exercicios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercicios);
 
+//        Intent intent = getIntent();
+//        Bundle parametros = intent.getExtras();
+//        String nome = parametros.getString("chaveCor");
+
         btnExercicio = findViewById(R.id.btnExercicio);
         btnAvancar = findViewById(R.id.btnAvancar);
         btnAdicionar = findViewById(R.id.btnAdicionar);

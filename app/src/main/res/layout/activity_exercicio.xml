@@ -64,11 +64,11 @@
         app:layout_constraintVertical_bias="0.715" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/tvTempo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="00:30"
+        android:text="00:00:00"
         android:textColor="@color/white"
         android:textSize="100px"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -79,7 +79,7 @@
         app:layout_constraintVertical_bias="0.855" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/btnComecar"
         android:layout_width="178dp"
         android:layout_height="55dp"
         android:backgroundTint="@color/orange"
