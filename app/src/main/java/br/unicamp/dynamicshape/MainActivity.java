@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,Home.class);
+                Intent intent = new Intent(MainActivity.this,user.class);
                 if(edtEmail.getText().toString() == ""||
                    edtSenha.getText().toString()  == ""){
                     Toast.makeText(MainActivity.this, "Campos vazios", Toast.LENGTH_LONG).show();
