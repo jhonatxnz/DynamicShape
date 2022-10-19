@@ -15,15 +15,15 @@
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width = "match_parent"
-            android:background="?attr/colorPrimary"
+            android:background="@color/gray"
               app:popupTheme="@style/Theme.DynamicShape.PopupOverlay"
             android:layout_height = "?attr/actionBarSize" />
 
   </com.google.android.material.appbar.AppBarLayout>
 
-  <include layout="@layout/content_user"/>
+    <include layout="@layout/content_user" />
 
-  <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
   android:id="@+id/fab"
   android:layout_width="wrap_content"
   android:layout_height="wrap_content"

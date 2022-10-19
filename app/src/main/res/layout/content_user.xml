@@ -12,48 +12,13 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        app:defaultNavHost="true"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:defaultNavHost="true"
-        app:navGraph="@navigation/mobile_navigation2"
-    />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="@color/gray"
-        app:layout_constraintBottom_toBottomOf="@+id/imgExercicios"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-
-        android:id="@+id/imageView4"
-        android:layout_width="249dp"
-        android:layout_height="85dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024"
-        app:srcCompat="@drawable/logo" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SAIR"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.916"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.063" />
+        app:navGraph="@navigation/mobile_navigation2" />
 
     <TextView
         android:id="@+id/textView3"
@@ -64,10 +29,9 @@
         android:textSize="42px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.524"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintVertical_bias="0.431" />
 
     <ImageView
         android:id="@+id/imageView14"
@@ -78,7 +42,7 @@
         app:layout_constraintHorizontal_bias="0.255"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.487"
+        app:layout_constraintVertical_bias="0.419"
         app:srcCompat="@drawable/atleta" />
 
     <ProgressBar
@@ -89,16 +53,16 @@
         android:background="@color/orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.562"
+        app:layout_constraintHorizontal_bias="0.618"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.534" />
+        app:layout_constraintVertical_bias="0.481" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="116dp"
         android:layout_height="106dp"
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="400dp"
         android:backgroundTint="@color/gray"
         android:text="Fevereiro"
         android:textColor="@color/white"
@@ -112,7 +76,7 @@
         android:layout_width="116dp"
         android:layout_height="106dp"
 
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="400dp"
         android:backgroundTint="@color/gray"
         android:text="Março"
         android:textColor="@color/white"
@@ -126,7 +90,7 @@
         android:layout_width="116dp"
         android:layout_height="106dp"
 
-        android:layout_marginTop="420dp"
+        android:layout_marginTop="400dp"
         android:backgroundTint="@color/gray"
         android:text="Janeiro"
         android:textColor="@color/white"
@@ -139,24 +103,26 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Exercicios para voce fazer"
+        android:text="Exercícios selecionados para você:"
         android:textColor="@color/black"
         android:textSize="42px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.772" />
+        app:layout_constraintVertical_bias="0.784" />
 
     <ImageView
         android:id="@+id/imgExercicios"
         android:layout_width="match_parent"
         android:layout_height="120dp"
+        android:layout_marginTop="611dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
 
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nav_host_fragment_content_user"
         app:layout_constraintVertical_bias="0.932"
         app:srcCompat="@drawable/emagrecer" />
 
@@ -168,7 +134,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.202"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/academia" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

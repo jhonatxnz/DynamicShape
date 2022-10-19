@@ -14,6 +14,8 @@ public class GalleryFragment extends Fragment {
 
 private FragmentGalleryBinding binding;
 
+
+
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
         GalleryViewModel galleryViewModel =
@@ -32,4 +34,5 @@ private FragmentGalleryBinding binding;
         super.onDestroyView();
         binding = null;
     }
+
 }

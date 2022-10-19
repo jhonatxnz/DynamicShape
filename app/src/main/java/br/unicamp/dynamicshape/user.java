@@ -1,5 +1,6 @@
 package br.unicamp.dynamicshape;
 
+import android.content.ClipData;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
@@ -16,7 +17,9 @@ import br.unicamp.dynamicshape.databinding.ActivityUserBinding;
 public class user extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
-private ActivityUserBinding binding;
+    private ActivityUserBinding binding;
+    private ClipData.Item nav_home;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,4 +62,5 @@ private ActivityUserBinding binding;
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
 }
