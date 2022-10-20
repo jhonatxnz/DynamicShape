@@ -9,6 +9,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class MainActivity extends AppCompatActivity {
 
     EditText edtEmail,edtSenha;
@@ -27,12 +31,13 @@ public class MainActivity extends AppCompatActivity {
         btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,user.class);
+
                 if(edtEmail.getText().toString() == ""||
                    edtSenha.getText().toString()  == ""){
                     Toast.makeText(MainActivity.this, "Campos vazios", Toast.LENGTH_LONG).show();
                 }else {
-                    startActivity(intent);
+                    Usuario user = new Usuario(edtEmail.getText().toString(), edtSenha.getText().toString());
+                    Logar(user);
                 }
             }
         });
@@ -41,6 +46,34 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,Cadastro.class);
                 startActivity(intent);
+            }
+        });
+
+    }
+    private void Logar(Usuario usuario){
+        Service service = RetrofitConfig.getRetrofitInstance().create(Service.class);
+        Call<Usuario> call = service.getLogin(usuario);
+
+        call.enqueue(new Callback<Usuario>() {
+            @Override
+            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                try {
+                    if(response.isSuccessful()){
+                        Intent intent = new Intent(MainActivity.this,user.class);
+                        startActivity(intent);
+                    }
+                    else{
+                        Toast.makeText(MainActivity.this, "Email ou senha incorreto!", Toast.LENGTH_LONG).show();
+
+                    }
+                }catch (Exception err){
+                    System.err.println(err.getMessage());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Usuario> call, Throwable t) {
+                Toast.makeText(MainActivity.this, "Email ou senha incorreto!", Toast.LENGTH_LONG).show();
             }
         });
     }

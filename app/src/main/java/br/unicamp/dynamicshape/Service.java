@@ -27,4 +27,8 @@ public interface Service {
     @GET("/api/academia/delete/{id}")
     Call<Usuario> excluirUsuario(@Path("id") String id);
 
+    @POST("/api/login")
+    Call<Usuario> getLogin (@Body Usuario usuario);
+    @POST("/api/logout")
+    Call<Usuario> getLogout (@Body Usuario usuario);
 }
