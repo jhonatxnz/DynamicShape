@@ -29,6 +29,5 @@ public interface Service {
 
     @POST("/api/login")
     Call<Usuario> getLogin (@Body Usuario usuario);
-    @POST("/api/logout")
-    Call<Usuario> getLogout (@Body Usuario usuario);
+
 }

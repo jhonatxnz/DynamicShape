@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -19,6 +23,7 @@ public class Home extends AppCompatActivity {
     ImageView imgExercicios;
     Button btnMes;
     TextView tvSair;
+    TextView tvDias;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,9 +32,14 @@ public class Home extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle parametros = intent.getExtras();
 
+//        Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
+//        System.err.println("Email: " + usuario.getEmail());
+//        System.err.println("Senha: " + usuario.getSenha());
+
         imgExercicios = findViewById(R.id.imgExercicios);
         btnMes = findViewById(R.id.btnMes);
         tvSair = findViewById(R.id.tvSair);
+        tvDias = findViewById(R.id.tvDias);
 
         imgExercicios.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,8 +51,7 @@ public class Home extends AppCompatActivity {
         tvSair.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Usuario usuario = new Usuario();
-                Logout(usuario);
+                Logout();
             }
         });
         btnMes.setOnClickListener(new View.OnClickListener() {
@@ -53,32 +62,9 @@ public class Home extends AppCompatActivity {
             }
         });
     }
-    private void Logout(Usuario usuario){
-        Service service = RetrofitConfig.getRetrofitInstance().create(Service.class);
-        Call<Usuario> call = service.getLogout(usuario);
+    private void Logout(){
+        Intent intent = new Intent(Home.this,MainActivity.class);
+        startActivity(intent);
 
-        call.enqueue(new Callback<Usuario>() {
-            @Override
-            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-                try {
-                    if(response.isSuccessful()){
-                        Intent intent = new Intent(Home.this,MainActivity.class);
-                        startActivity(intent);
-                    }
-                    else{
-                        Toast.makeText(Home.this, "Erro ao deslogar", Toast.LENGTH_LONG).show();
-
-                    }
-                }catch (Exception err){
-                    System.err.println(err.getMessage());
-                }
-            }
-
-            @Override
-            public void onFailure(Call<Usuario> call, Throwable t) {
-                Toast.makeText(Home.this, "Erro ao deslogar", Toast.LENGTH_LONG).show();
-            }
-        });
     }
-
 }

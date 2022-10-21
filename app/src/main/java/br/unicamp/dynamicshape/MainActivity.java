@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 try {
                     if(response.isSuccessful()){
-                        Intent intent = new Intent(MainActivity.this,user.class);
+                        Intent intent = new Intent(MainActivity.this,Home.class);
                         startActivity(intent);
                     }
                     else{
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Usuario> call, Throwable t) {
-                Toast.makeText(MainActivity.this, "Email ou senha incorreto!", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, t.toString(), Toast.LENGTH_LONG).show();
             }
         });
     }

@@ -50,18 +50,18 @@
         app:layout_constraintVertical_bias="0.599" />
 
     <TextView
-        android:layout_width="362dp"
-        android:layout_height="73dp"
+        android:layout_width="367dp"
+        android:layout_height="134dp"
         android:gravity="left"
         android:text="A prancha é um exercício isométrico de força do núcleo que envolve a manutenção de uma posição semelhante a uma flexão de braço pelo maior tempo possível"
         android:textColor="@color/white"
         android:textSize="52px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.673"
+        app:layout_constraintHorizontal_bias="0.636"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.715" />
+        app:layout_constraintVertical_bias="0.773" />
 
     <TextView
         android:id="@+id/tvTempo"
