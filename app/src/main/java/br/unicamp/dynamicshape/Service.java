@@ -30,4 +30,7 @@ public interface Service {
     @POST("/api/login")
     Call<Usuario> getLogin (@Body Usuario usuario);
 
+    @GET("/api/academia/{email}")
+    Call<Usuario> getUsuarioByEmail(@Path("email") String email);
+
 }

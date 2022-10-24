@@ -46,32 +46,29 @@
         app:layout_constraintVertical_bias="0.177" />
 
     <TextView
-        android:layout_width="197dp"
-        android:layout_height="69dp"
+        android:layout_width="177dp"
+        android:layout_height="28dp"
         android:gravity="left"
         android:text="Selecione uma foto"
         android:textColor="@color/white"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.546"
+        app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.293" />
+        app:layout_constraintVertical_bias="0.247" />
 
-    <Button
-        android:id="@+id/btnAdicionarImg"
-        android:layout_width="291dp"
-        android:layout_height="153dp"
-        android:layout_marginTop="260dp"
-        android:backgroundTint="@color/grayy"
-
-        android:text="+"
-        android:textColor="@color/white"
-        android:textSize="40dp"
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="341dp"
+        android:layout_height="161dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.421"
+        app:srcCompat="@drawable/exercicio" />
 
     <EditText
         android:id="@+id/edtNome"
