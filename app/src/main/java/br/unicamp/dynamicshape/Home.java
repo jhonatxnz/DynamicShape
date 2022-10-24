@@ -42,8 +42,7 @@ public class Home extends AppCompatActivity {
         Bundle parametros = intent.getExtras();
 
         Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
-        System.err.println("Email: " + usuario.getEmail());
-        System.err.println("Senha: " + usuario.getSenha());
+        intent.putExtra("usuario", usuario);
 
         Service service = RetrofitConfig.getRetrofitInstance().create(Service.class);
         Call<Usuario> call = service.getUsuarioByEmail(usuario.getEmail().toString());
@@ -85,7 +84,6 @@ public class Home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
     private void Logout(){
         Intent intent = new Intent(Home.this,MainActivity.class);
