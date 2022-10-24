@@ -46,7 +46,7 @@ public class Objetivo extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Objetivo.this,MainActivity.class);
                 usuario.setObjetivo(Objetivo);
-                usuario.setTempo(Float.parseFloat(edtDuracao.getText().toString()));
+                usuario.setTempo(Integer.parseInt(edtDuracao.getText().toString()));
                 intent.putExtra("usuario", usuario);
                 incluirUser(usuario);
 
@@ -57,7 +57,7 @@ public class Objetivo extends AppCompatActivity {
                 }
                 else
                 {
-                    usuario.setTempo(Float.parseFloat(edtDuracao.getText().toString()));
+                    usuario.setTempo(Integer.parseInt(edtDuracao.getText().toString()));
 
                     intent.putExtra("usuario", usuario);
 

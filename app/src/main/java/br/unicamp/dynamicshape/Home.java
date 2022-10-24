@@ -2,6 +2,10 @@ package br.unicamp.dynamicshape;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.format.DateFormat;
@@ -33,7 +37,7 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Progresso();
+
         Intent intent = getIntent();
         Bundle parametros = intent.getExtras();
 
@@ -42,8 +46,19 @@ public class Home extends AppCompatActivity {
         System.err.println("Senha: " + usuario.getSenha());
 
         Service service = RetrofitConfig.getRetrofitInstance().create(Service.class);
-        Call<Usuario> call = service.getUsuarioByEmail(usuario.getEmail());
+        Call<Usuario> call = service.getUsuarioByEmail(usuario.getEmail().toString());
+        call.enqueue(new Callback<Usuario>() {
+            @Override
+            public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                System.err.println("Nome: " + response.body().getNome());
+                Progresso(response.body().getTempo());
+            }
 
+            @Override
+            public void onFailure(Call<Usuario> call, Throwable t) {
+
+            }
+        });
 
         imgExercicios = findViewById(R.id.imgExercicios);
         btnMes = findViewById(R.id.btnMes);
@@ -77,18 +92,23 @@ public class Home extends AppCompatActivity {
         startActivity(intent);
 
     }
-    private void Progresso(){
+    private void Progresso(int dias){
         progressBar = findViewById(R.id.progressBar);
         textView = findViewById(R.id.tvDias);
         handler = new Handler();
+
+        Date date = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd");
+        Status = Integer.parseInt(sdf.format(date));
+
         new Thread(new Runnable() {
             public void run() {
-                while (Status < 365) { //usuario.getTempo + 30
-                    Status += 1;
+                while (Status < dias * 30) { //usuario.getTempo + 30
+
                     /* Atualize a barra de progresso */
                     handler.post(new Runnable() {
                         public void run() {
-                            progressBar.setMax(365);
+                            progressBar.setMax(dias * 30);
                             progressBar.setProgress(Status);
                             /* Mostra em formato de números o resultado no textView*/
                             textView.setText(Status+"/"+ progressBar.getMax());

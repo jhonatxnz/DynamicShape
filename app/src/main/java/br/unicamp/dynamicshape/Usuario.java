@@ -28,10 +28,10 @@ public class Usuario implements Serializable{
     @SerializedName("objetivo")
     private Integer objetivo;
     @SerializedName("tempo")
-    private Float tempo;
+    private Integer tempo;
 
 
-    public Usuario(String id, String nome, Integer idade, String telefone, String email, Float peso,Float altura, String senha, String imagem, Integer genero, Integer objetivo,Float tempo) {
+    public Usuario(String id, String nome, Integer idade, String telefone, String email, Float peso,Float altura, String senha, String imagem, Integer genero, Integer objetivo,Integer tempo) {
         this.id = id;
         this.nome = nome;
         this.idade = idade;
@@ -140,9 +140,9 @@ public class Usuario implements Serializable{
         this.objetivo = objetivo;
     }
 
-    public Float getTempo() {return tempo;}
+    public Integer getTempo() {return tempo;}
 
-    public void setTempo(Float tempo) {
+    public void setTempo(Integer tempo) {
         this.tempo = tempo;
     }
 }
