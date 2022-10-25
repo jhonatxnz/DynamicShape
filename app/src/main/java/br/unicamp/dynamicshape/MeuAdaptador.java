@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,11 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MeuAdaptador extends RecyclerView.Adapter<MeuAdaptador.MyHolder>{
-    List<Exercicioo> listaExerc = new ArrayList<>();
+    List<Peso> listaExerc = new ArrayList<>();
 
     ItemClickListener itemClickListener;
 
-    public MeuAdaptador(List<Exercicioo> list) { this.listaExerc = list; }
+    public MeuAdaptador(List<Peso> list) { this.listaExerc = list; }
 
     @NonNull
     @Override
@@ -28,10 +29,10 @@ public class MeuAdaptador extends RecyclerView.Adapter<MeuAdaptador.MyHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull MeuAdaptador.MyHolder holder, @SuppressLint("RecyclerView") int position) {
-        final Exercicioo exercData = listaExerc.get(position);
+        final Peso exercData = listaExerc.get(position);
 
-        holder.tvNomeItem.setText(exercData.getNome());
-        holder.tvEmailItem.setText(exercData.getEmail());
+        holder.btnNome.setText(exercData.getNome());
+
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,13 +41,6 @@ public class MeuAdaptador extends RecyclerView.Adapter<MeuAdaptador.MyHolder>{
             }
         });
 
-        holder.tvDeleteItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                listaExerc.remove(position);
-                notifyDataSetChanged();
-            }
-        });
     }
 
     @Override
@@ -55,14 +49,13 @@ public class MeuAdaptador extends RecyclerView.Adapter<MeuAdaptador.MyHolder>{
     }
 
     public static class MyHolder extends RecyclerView.ViewHolder {
-        TextView tvNomeItem, tvEmailItem, tvDeleteItem;
+        Button btnNome;
 
         public MyHolder (View itemView){
             super(itemView);
 
-            tvNomeItem = itemView.findViewById(R.id.tvNomeItem);
-            tvEmailItem = itemView.findViewById(R.id.tvEmailItem);
-            tvDeleteItem = itemView.findViewById(R.id.tvDeleteItem);
+            btnNome = itemView.findViewById(R.id.btnNome);
+
         }
     }
 
@@ -70,7 +63,7 @@ public class MeuAdaptador extends RecyclerView.Adapter<MeuAdaptador.MyHolder>{
         this.itemClickListener = itemClickListener;
     }
 
-    public void UpdateData(int position, Exercicioo exercData) {
+    public void UpdateData(int position, Peso exercData) {
         listaExerc.remove(position);
         listaExerc.add(exercData);
         notifyItemChanged(position);

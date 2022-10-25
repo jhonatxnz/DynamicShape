@@ -33,4 +33,7 @@ public interface Service {
     @GET("/api/academia/{email}")
     Call<Usuario> getUsuarioByEmail(@Path("email") String email);
 
+    @GET("/api/exercicios/peso")
+    Call<List<Peso>> getExercicio50_150();
+
 }

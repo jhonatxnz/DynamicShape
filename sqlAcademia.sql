@@ -94,3 +94,4 @@ Select * from Usuario where email = 'dsada@gmail.com'
 DELETE FROM Usuario WHERE idConta =1
 
 drop table Usuario
+SELECT DISTINCT Exercicios.nome FROM Exercicios where idExercicio BETWEEN 1 and 4
