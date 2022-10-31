@@ -1,5 +1,6 @@
 package br.unicamp.dynamicshape;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
@@ -33,7 +34,10 @@ public interface Service {
     @GET("/api/academia/{email}")
     Call<Usuario> getUsuarioByEmail(@Path("email") String email);
 
+    //Exercicios
     @GET("/api/exercicios/peso")
-    Call<List<Peso>> getExercicio50_150();
+    Call<ArrayList<Peso>> getExercicio50_150();
 
+    @POST("/api/exercicios/post")
+    Call<Exercicioo> incluirExercicio(@Body Exercicioo exercicioo);
 }

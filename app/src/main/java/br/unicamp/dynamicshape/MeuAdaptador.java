@@ -1,5 +1,6 @@
 package br.unicamp.dynamicshape;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MeuAdaptador extends RecyclerView.Adapter<MeuAdaptador.MyHolder>{
-    List<Peso> listaExerc = new ArrayList<>();
+    List<Peso> listaExerc;
 
     ItemClickListener itemClickListener;
 
@@ -33,11 +34,12 @@ public class MeuAdaptador extends RecyclerView.Adapter<MeuAdaptador.MyHolder>{
 
         holder.btnNome.setText(exercData.getNome());
 
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.btnNome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 itemClickListener.onItemClick(position, exercData);
+
             }
         });
 

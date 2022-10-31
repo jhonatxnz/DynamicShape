@@ -87,20 +87,36 @@
         app:layout_constraintVertical_bias="0.654" />
 
     <EditText
-        android:id="@+id/edtDescricao"
+        android:id="@+id/edtQuantVezes"
         android:layout_width="700px"
         android:layout_height="wrap_content"
         android:background="@drawable/edittext"
         android:ems="10"
         android:gravity="center"
-        android:hint="Descrição"
+        android:hint="Quantas vezes"
         android:maxLength="30"
         android:padding="30px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.766" />
+        app:layout_constraintVertical_bias="0.742" />
+
+    <EditText
+        android:id="@+id/edtSessoes"
+        android:layout_width="700px"
+        android:layout_height="wrap_content"
+        android:background="@drawable/edittext"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Quantas Sessões"
+        android:maxLength="30"
+        android:padding="30px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.836" />
 
     <Button
         android:id="@+id/btnAdicionar"

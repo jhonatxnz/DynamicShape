@@ -45,7 +45,7 @@ public class Home extends AppCompatActivity {
         intent.putExtra("usuario", usuario);
 
         Service service = RetrofitConfig.getRetrofitInstance().create(Service.class);
-        Call<Usuario> call = service.getUsuarioByEmail(usuario.getEmail().toString());
+        Call<Usuario> call = service.getUsuarioByEmail(usuario.getEmail());
         call.enqueue(new Callback<Usuario>() {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
@@ -68,6 +68,7 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Home.this,Exercicios.class);
+                intent.putExtra("usuario", usuario);
                 startActivity(intent);
             }
         });
