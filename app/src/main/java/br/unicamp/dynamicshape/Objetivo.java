@@ -50,8 +50,6 @@ public class Objetivo extends AppCompatActivity {
                 intent.putExtra("usuario", usuario);
                 incluirUser(usuario);
 
-
-
                 if(edtDuracao.getText().length() == 0 || Objetivo < 0){
                     Toast.makeText(Objetivo.this, "Selecione o objetivo/coloque o tempo", Toast.LENGTH_LONG).show();
                 }

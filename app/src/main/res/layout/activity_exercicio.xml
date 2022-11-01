@@ -8,34 +8,20 @@
     android:background="@color/gray">
 
 
-
     <ImageView
-        android:id="@+id/imgSeta"
-        android:layout_width="61dp"
-        android:layout_height="62dp"
-        android:rotation="180"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.034"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="@drawable/seta" />
-
-    <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/tvImage"
         android:layout_width="338dp"
         android:layout_height="308dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.452"
+        app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2"
+        app:layout_constraintVertical_bias="0.085"
         app:srcCompat="@drawable/exercicio" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/tvNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -44,24 +30,55 @@
         android:textSize="72px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintHorizontal_bias="0.116"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.599" />
+        app:layout_constraintVertical_bias="0.527" />
 
     <TextView
-        android:layout_width="367dp"
-        android:layout_height="134dp"
+        android:id="@+id/tvDescricao"
+        android:layout_width="150dp"
+        android:layout_height="31dp"
         android:gravity="left"
-        android:text="A prancha é um exercício isométrico de força do núcleo que envolve a manutenção de uma posição semelhante a uma flexão de braço pelo maior tempo possível"
+        android:text="Descrição: "
         android:textColor="@color/white"
         android:textSize="52px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_bias="0.084"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.773" />
+        app:layout_constraintVertical_bias="0.594" />
+
+    <TextView
+        android:id="@+id/tvQuantasVezes"
+        android:layout_width="156dp"
+        android:layout_height="36dp"
+        android:gravity="left"
+        android:text="Quantas vezes: "
+        android:textColor="@color/white"
+        android:textSize="52px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.653" />
+
+    <TextView
+        android:id="@+id/tvSessoes"
+        android:layout_width="156dp"
+        android:layout_height="36dp"
+        android:gravity="left"
+        android:text="Sessões: "
+        android:textColor="@color/white"
+        android:textSize="52px"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.086"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.705" />
 
     <TextView
         android:id="@+id/tvTempo"

@@ -19,8 +19,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Exercicios extends AppCompatActivity {
-    float pesoGlobal = 0;
-    float alturaGlobal = 0;
     Button btnExercicio,btnAvancar,btnAdicionar;
     RecyclerView recyclerView;
     ArrayList<Peso> list = new ArrayList<>();
@@ -39,45 +37,31 @@ public class Exercicios extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle parametros = intent.getExtras();
-
         Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
         intent.putExtra("usuario", usuario);
 
-        // btnExercicio = findViewById(R.id.btnExercicio);
         btnAvancar = findViewById(R.id.btnAvancar);
         btnAdicionar = findViewById(R.id.btnAdicionar);
         // recyclerView = findViewById(R.id.recyclerView);
-
         // recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Service service = RetrofitConfig.getRetrofitInstance().create(Service.class);
 
-        Call<Usuario> call2 = service.getUsuarioByEmail(usuario.getEmail());
-        call2.enqueue(new Callback<Usuario>() {
+        Call<Usuario> call = service.getUsuarioByEmail(usuario.getEmail());
+        call.enqueue(new Callback<Usuario>() {
             @Override
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-              pesoGlobal   = response.body().getPeso();
-              alturaGlobal = response.body().getAltura();
-            }
-
-            @Override
-            public void onFailure(Call<Usuario> call, Throwable t) {
-                Toast.makeText(Exercicios.this, "hdjasdjghahjsdgajhdsgjhasgdjhagdsjhgasdjhgasdjh!", Toast.LENGTH_LONG).show();
-            }
-        });
-        System.err.println("EU PRECISO DISSOOOO: " + pesoGlobal);
-        //if(pesoGlobal > 0 && pesoGlobal < 50){
-            Call<ArrayList<Peso>> call = service.getExercicio50_150();
-            call.enqueue(new Callback<ArrayList<Peso>>() {
-                @Override
-                public void onResponse(Call<ArrayList<Peso>> call, Response<ArrayList<Peso>> response) {
-                    try {
-                        if(response.isSuccessful()){
-                            System.out.println("RESPOSTA: " + response.body());
-                            populateGridView(response.body());
-                            for (Peso peso : response.body()) {
-                                System.out.println(peso.toString());
-                            }
+                if(response.body().getPeso() > 0 && response.body().getPeso()  < 50){
+                    Call<ArrayList<Peso>> call2 = service.getExercicio50_150();
+                    call2.enqueue(new Callback<ArrayList<Peso>>() {
+                        @Override
+                        public void onResponse(Call<ArrayList<Peso>> call, Response<ArrayList<Peso>> response) {
+                            try {
+                                if(response.isSuccessful()){
+                                    populateGridView(response.body());
+                                    for (Peso peso : response.body()) {
+                                        System.out.println(peso.toString());
+                                    }
 
 //                            adaptador = new MeuAdaptador(list);
 //                            recyclerView.setAdapter(adaptador);
@@ -88,42 +72,114 @@ public class Exercicios extends AppCompatActivity {
 //
 //                                }
 //                            });
+                                }
+                                else{
+                                    Toast.makeText(Exercicios.this, "Response.isNotSucessul!", Toast.LENGTH_LONG).show();
+                                }
+                            }catch (Exception err){
+                                System.err.println(err.getMessage());
+                            }
                         }
-                        else{
-                            Toast.makeText(Exercicios.this, "blablabla!", Toast.LENGTH_LONG).show();
+
+                        @Override
+                        public void onFailure(Call<ArrayList<Peso>> call, Throwable t) {
+                            Toast.makeText(Exercicios.this, "Erro no onFailure", Toast.LENGTH_LONG).show();
                         }
-                    }catch (Exception err){
-                        System.err.println(err.getMessage());
-                    }
-                }
+                    });
+                } else if(response.body().getPeso() > 50.0 && response.body().getPeso() < 60.0){
+                    Call<ArrayList<Peso>> call2 = service.getExercicio60_160();
+                    call2.enqueue(new Callback<ArrayList<Peso>>() {
+                        @Override
+                        public void onResponse(Call<ArrayList<Peso>> call, Response<ArrayList<Peso>> response) {
+                            try {
+                                if(response.isSuccessful()){
+                                    populateGridView(response.body());
+                                    for (Peso peso : response.body()) {
+                                        System.out.println(peso.toString());
+                                    }
+                                }
+                                else{
+                                    Toast.makeText(Exercicios.this, "Response.isNotSucessul!", Toast.LENGTH_LONG).show();
+                                }
+                            }catch (Exception err){
+                                System.err.println(err.getMessage());
+                            }
+                        }
 
-                @Override
-                public void onFailure(Call<ArrayList<Peso>> call, Throwable t) {
-                    Toast.makeText(Exercicios.this, "ERRO NO onfailure", Toast.LENGTH_LONG).show();
-                }
-            });
-//        }
-//        else if(pesoGlobal > 50.0 && pesoGlobal < 60.0){
-//
-//        }
-//        else{
-//
-//        }
+                        @Override
+                        public void onFailure(Call<ArrayList<Peso>> call, Throwable t) {
+                            Toast.makeText(Exercicios.this, "Erro no onFailure", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                } else if(response.body().getPeso() > 60.0 && response.body().getPeso() < 70.0){
+                    Call<ArrayList<Peso>> call2 = service.getExercicio70_170();
+                    call2.enqueue(new Callback<ArrayList<Peso>>() {
+                        @Override
+                        public void onResponse(Call<ArrayList<Peso>> call, Response<ArrayList<Peso>> response) {
+                            try {
+                                if(response.isSuccessful()){
+                                    populateGridView(response.body());
+                                    for (Peso peso : response.body()) {
+                                        System.out.println(peso.toString());
+                                    }
+                                }
+                                else{
+                                    Toast.makeText(Exercicios.this, "Response.isNotSucessul!", Toast.LENGTH_LONG).show();
+                                }
+                            }catch (Exception err){
+                                System.err.println(err.getMessage());
+                            }
+                        }
 
-//        btnExercicio.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(Exercicios.this,Exercicio.class);
-//                startActivity(intent);
-//            }
-//        });
+                        @Override
+                        public void onFailure(Call<ArrayList<Peso>> call, Throwable t) {
+                            Toast.makeText(Exercicios.this, "Erro no onFailure", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }else{
+                    Call<ArrayList<Peso>> call2 = service.getExercicioPadrao();
+                    call2.enqueue(new Callback<ArrayList<Peso>>() {
+                        @Override
+                        public void onResponse(Call<ArrayList<Peso>> call, Response<ArrayList<Peso>> response) {
+                            try {
+                                if(response.isSuccessful()){
+                                    populateGridView(response.body());
+                                    for (Peso peso : response.body()) {
+                                        System.out.println(peso.toString());
+                                    }
+                                }
+                                else{
+                                    Toast.makeText(Exercicios.this, "Response.isNotSucessul!", Toast.LENGTH_LONG).show();
+                                }
+                            }catch (Exception err){
+                                System.err.println(err.getMessage());
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ArrayList<Peso>> call, Throwable t) {
+                            Toast.makeText(Exercicios.this, "Erro no onFailure", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Usuario> call, Throwable t) {
+                Toast.makeText(Exercicios.this, "OnFailure do email!", Toast.LENGTH_LONG).show();
+            }
+        });
+
         btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Exercicios.this,Home.class);
+                Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
+                intent.putExtra("usuario", usuario);
                 startActivity(intent);
             }
         });
+
         btnAdicionar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -131,6 +187,5 @@ public class Exercicios extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }

@@ -22,18 +22,13 @@ public class Genero extends AppCompatActivity {
         btnFeminino = findViewById(R.id.btnFeminino);
         btnMasculino = findViewById(R.id.btnMasculino);
 
-        //Intent intent = getIntent();
-        //Bundle parametros = intent.getExtras();
-
-
         Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
 
         btnFeminino.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Genero.this,PesoAltura.class);
-                usuario.setGenero(2); // Rever
-                //parametros.putString("chaveFeminino",btnFeminino.getText().toString());
+                usuario.setGenero(2);
 
                 intent.putExtra("usuario", usuario);
                 startActivity(intent);
@@ -45,7 +40,6 @@ public class Genero extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Genero.this,PesoAltura.class);
                 usuario.setGenero(1); // Rever
-                //parametros.putString("chaveFeminino",btnFeminino.getText().toString());
 
                 intent.putExtra("usuario", usuario);
                 System.err.println("Genero"+ usuario.getGenero());

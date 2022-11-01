@@ -37,7 +37,7 @@ public class CadastroExercicio extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(edtNome.getText().length() != 0){
-                    Exercicioo exerc = new Exercicioo("dsad",edtNome.getText().toString(),Integer.parseInt(edtQuantVezes.getText().toString()),Integer.parseInt(edtSessoes.getText().toString()),1,1);
+                    Exercicioo exerc = new Exercicioo("x",edtNome.getText().toString(),Integer.parseInt(edtQuantVezes.getText().toString()),Integer.parseInt(edtSessoes.getText().toString()),1,1);
                     incluirExercicio(exerc);
                 }else{
                     Toast.makeText(CadastroExercicio.this, "Preencha todos o nome do exercicio", Toast.LENGTH_LONG).show();
@@ -64,7 +64,7 @@ public class CadastroExercicio extends AppCompatActivity {
                     Toast.makeText(CadastroExercicio.this, "Incluiu exercício!", Toast.LENGTH_LONG).show();
                 }
                 else{
-                    Toast.makeText(CadastroExercicio.this, "Erro na inclusão", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CadastroExercicio.this, "Erro na inclusão!", Toast.LENGTH_LONG).show();
                 }
             }
 

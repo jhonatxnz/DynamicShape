@@ -104,19 +104,15 @@ public class Home extends AppCompatActivity {
             public void run() {
                 while (Status < dias * 30) { //usuario.getTempo + 30
 
-                    /* Atualize a barra de progresso */
                     handler.post(new Runnable() {
                         public void run() {
                             progressBar.setMax(dias * 30);
                             progressBar.setProgress(Status);
-                            /* Mostra em formato de números o resultado no textView*/
+
                             textView.setText(Status+"/"+ progressBar.getMax());
                         }
                     });
                     try {
-                        /* Determina a velocidade 100 milissegundos.
-                         Um valor baixo, mostra a barra muito rápida,
-                         mas um valor alto mostra a barra muito lenta*/
                         Thread.sleep(100);
                     } catch (InterruptedException e) {
                         e.printStackTrace();

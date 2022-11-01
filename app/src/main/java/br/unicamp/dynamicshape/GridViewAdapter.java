@@ -2,6 +2,7 @@ package br.unicamp.dynamicshape;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,9 @@ import java.util.List;
 public class GridViewAdapter extends BaseAdapter {
 
     private List<Peso> listaPeso;
+    private Usuario usuario;
     Context context;
+    ItemClickListener itemClickListener;
 
 
     public GridViewAdapter(Context context, List<Peso> parametroListaDog){
@@ -55,8 +58,13 @@ public class GridViewAdapter extends BaseAdapter {
         exercicioButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(context,Exercicio.class);
+                Bundle params = new Bundle();
+                params.putString("chaveNome", peso.getNome());
+                intent.putExtras(params);
                 context.startActivity(intent);
+
             }
         });
 

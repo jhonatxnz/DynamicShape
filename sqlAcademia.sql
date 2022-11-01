@@ -68,10 +68,26 @@ insert into Ambiente([local]) values('Academia')
 insert into Ambiente([local]) values('Casa')
 
 --4 EXERCICIO
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Prancha', 4, 5, 2, 1)
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Agachamento', 3, 2, 2, 1)
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Leg 45º', 15, 3, 1, 1)
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Corrida Estacionada', 7, 3, 1, 2)
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('PranchaFacil', 4, 5, 2, 1)
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('AgachamentoFacil', 3, 2, 2, 1)
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Leg 45ºFacil', 15, 3, 1, 1)
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Corrida EstacionadaFacil', 7, 3, 1, 2)
+
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('PranchaMedio', 9, 6, 2, 1)
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('AgachamentoMedio', 8, 3, 2, 1)
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Leg 45ºMedio', 20, 3, 2, 1)
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Corrida EstacionadaMedio', 13, 4, 1, 2)
+
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('PranchaDificil', 14, 7, 2, 1)
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('AgachamentoDificil', 13, 4, 2, 1)
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Leg 45ºDificil', 25, 5, 1, 1)
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Corrida EstacionadaDificil', 18, 5, 1, 2)
+
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('AgachamentoPadrao', 1, 1, 2, 1)
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Leg 45ºPadrao',1, 1, 1, 1)
+insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Corrida EstacionadaPadrao', 1, 1, 1, 2)
+
+
 
 
 
@@ -93,5 +109,6 @@ u.idObjetivo = e.idObjetivo
 Select * from Usuario where email = 'dsada@gmail.com'
 DELETE FROM Usuario WHERE idConta =1
 
-drop table Usuario
-SELECT DISTINCT Exercicios.nome FROM Exercicios where idExercicio BETWEEN 1 and 4
+drop table Exercicios
+
+SELECT DISTINCT nome FROM Exercicios where nome like '%Padrao%'

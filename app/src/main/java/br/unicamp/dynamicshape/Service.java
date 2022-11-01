@@ -35,8 +35,17 @@ public interface Service {
     Call<Usuario> getUsuarioByEmail(@Path("email") String email);
 
     //Exercicios
-    @GET("/api/exercicios/peso")
+    @GET("/api/exercicios/50_150")
     Call<ArrayList<Peso>> getExercicio50_150();
+
+    @GET("/api/exercicios/60_160")
+    Call<ArrayList<Peso>> getExercicio60_160();
+
+    @GET("/api/exercicios/70_170")
+    Call<ArrayList<Peso>> getExercicio70_170();
+
+    @GET("/api/exercicios/padrao")
+    Call<ArrayList<Peso>> getExercicioPadrao();
 
     @POST("/api/exercicios/post")
     Call<Exercicioo> incluirExercicio(@Body Exercicioo exercicioo);
