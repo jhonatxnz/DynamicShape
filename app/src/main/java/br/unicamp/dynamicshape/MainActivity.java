@@ -23,17 +23,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        edtEmail = findViewById(R.id.edtEmail);
-        edtSenha = findViewById(R.id.edtSenha);
+        edtEmail    = findViewById(R.id.edtEmail);
+        edtSenha    = findViewById(R.id.edtSenha);
         tvCadastrar = findViewById(R.id.tvCadastrar);
-        btnAvancar = findViewById(R.id.btnAvancar);
+        btnAvancar  = findViewById(R.id.btnAvancar);
 
         btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if(edtEmail.getText().toString() == ""||
-                   edtSenha.getText().toString()  == ""){
+                if(edtEmail.getText().toString()  == ""||
+                        edtSenha.getText().toString()  == ""){
                     Toast.makeText(MainActivity.this, "Campos vazios", Toast.LENGTH_LONG).show();
                 }else {
                     Usuario user = new Usuario(edtEmail.getText().toString(), edtSenha.getText().toString());
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 try {
                     if(response.isSuccessful()){
-                        
+
                         Intent intent = new Intent(MainActivity.this,Home.class);
                         intent.putExtra("usuario", usuario);
                         startActivity(intent);

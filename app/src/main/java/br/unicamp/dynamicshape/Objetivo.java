@@ -29,11 +29,11 @@ public class Objetivo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_objetivo);
 
-        seta = findViewById(R.id.imgSeta);
-        imgEmagrecer = findViewById(R.id.imgEmagrecer);
+        seta             = findViewById(R.id.imgSeta);
+        imgEmagrecer     = findViewById(R.id.imgEmagrecer);
         imgGanharMusculo = findViewById(R.id.imgGanharMusculo);
-        edtDuracao = findViewById(R.id.edtDuracao);
-        btnAvancar = findViewById(R.id.btnAvancar);
+        edtDuracao       = findViewById(R.id.edtDuracao);
+        btnAvancar       = findViewById(R.id.btnAvancar);
 
 
         imgEmagrecer.setOnClickListener(this::onClick);
@@ -56,9 +56,7 @@ public class Objetivo extends AppCompatActivity {
                 else
                 {
                     usuario.setTempo(Integer.parseInt(edtDuracao.getText().toString()));
-
                     intent.putExtra("usuario", usuario);
-
                     startActivity(intent);
                 }
             }

@@ -17,16 +17,16 @@ public class Exercicioo implements Serializable{
     private Integer idObjetivo;
 
     public Exercicioo(String id,String nome, Integer quantVezes,Integer sessoes,Integer idAmbiente,Integer idObjetivo) {
-        this.id = id;
-        this.nome = nome;
+        this.id         = id;
+        this.nome       = nome;
         this.quantVezes = quantVezes;
-        this.sessoes = sessoes;
+        this.sessoes    = sessoes;
         this.idAmbiente = idAmbiente;
         this.idObjetivo = idObjetivo;
     }
     public Exercicioo() {}
     public Exercicioo(String nome,Integer quantVezes) {
-        this.nome = nome;
+        this.nome       = nome;
         this.quantVezes = quantVezes;
     }
 

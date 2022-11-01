@@ -19,10 +19,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class Exercicios extends AppCompatActivity {
-    Button btnExercicio,btnAvancar,btnAdicionar;
-    RecyclerView recyclerView;
+    Button btnAvancar,btnAdicionar;
     ArrayList<Peso> list = new ArrayList<>();
-    MeuAdaptador adaptador;
     GridView exerciciosGridView;
 
     public void populateGridView(List<Peso> listaPeso){
@@ -35,15 +33,13 @@ public class Exercicios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercicios);
 
-        Intent intent = getIntent();
+        Intent intent     = getIntent();
         Bundle parametros = intent.getExtras();
-        Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
+        Usuario usuario   = (Usuario) getIntent().getSerializableExtra("usuario");
         intent.putExtra("usuario", usuario);
 
-        btnAvancar = findViewById(R.id.btnAvancar);
+        btnAvancar   = findViewById(R.id.btnAvancar);
         btnAdicionar = findViewById(R.id.btnAdicionar);
-        // recyclerView = findViewById(R.id.recyclerView);
-        // recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Service service = RetrofitConfig.getRetrofitInstance().create(Service.class);
 
@@ -62,16 +58,6 @@ public class Exercicios extends AppCompatActivity {
                                     for (Peso peso : response.body()) {
                                         System.out.println(peso.toString());
                                     }
-
-//                            adaptador = new MeuAdaptador(list);
-//                            recyclerView.setAdapter(adaptador);
-//
-//                            adaptador.setItemClickListener(new ItemClickListener() {
-//                                @Override
-//                                public void onItemClick(int position, Peso exercData) {
-//
-//                                }
-//                            });
                                 }
                                 else{
                                     Toast.makeText(Exercicios.this, "Response.isNotSucessul!", Toast.LENGTH_LONG).show();
@@ -173,7 +159,7 @@ public class Exercicios extends AppCompatActivity {
         btnAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Exercicios.this,Home.class);
+                Intent intent   = new Intent(Exercicios.this,Home.class);
                 Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
                 intent.putExtra("usuario", usuario);
                 startActivity(intent);

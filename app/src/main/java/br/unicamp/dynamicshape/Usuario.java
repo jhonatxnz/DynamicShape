@@ -32,18 +32,18 @@ public class Usuario implements Serializable{
 
 
     public Usuario(String id, String nome, Integer idade, String telefone, String email, Float peso,Float altura, String senha, String imagem, Integer genero, Integer objetivo,Integer tempo) {
-        this.id = id;
-        this.nome = nome;
-        this.idade = idade;
+        this.id       = id;
+        this.nome     = nome;
+        this.idade    = idade;
         this.telefone = telefone;
-        this.email = email;
-        this.peso = peso;
-        this.senha = senha;
-        this.imagem = imagem;
-        this.genero = genero;
+        this.email    = email;
+        this.peso     = peso;
+        this.senha    = senha;
+        this.imagem   = imagem;
+        this.genero   = genero;
         this.objetivo = objetivo;
-        this.altura = altura;
-        this.tempo = tempo;
+        this.altura   = altura;
+        this.tempo    = tempo;
     }
 
     public Usuario(String email,String senha){

@@ -62,6 +62,10 @@ public class GridViewAdapter extends BaseAdapter {
                 Intent intent = new Intent(context,Exercicio.class);
                 Bundle params = new Bundle();
                 params.putString("chaveNome", peso.getNome());
+                //params.putString("chaveDesc", peso.getDescricao());
+                params.putString("chaveQuantas", peso.getQuantVezes().toString());
+                params.putString("chaveSessoes", peso.getSessoes().toString());
+
                 intent.putExtras(params);
                 context.startActivity(intent);
 

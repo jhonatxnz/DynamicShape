@@ -3,17 +3,14 @@ package br.unicamp.dynamicshape;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Date;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.os.Handler;
 import android.widget.ProgressBar;
 
@@ -38,7 +35,7 @@ public class Home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        Intent intent = getIntent();
+        Intent intent     = getIntent();
         Bundle parametros = intent.getExtras();
 
         Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
@@ -60,9 +57,9 @@ public class Home extends AppCompatActivity {
         });
 
         imgExercicios = findViewById(R.id.imgExercicios);
-        btnMes = findViewById(R.id.btnMes);
-        tvSair = findViewById(R.id.tvSair);
-        tvDias = findViewById(R.id.tvDias);
+        btnMes        = findViewById(R.id.btnMes);
+        tvSair        = findViewById(R.id.tvSair);
+        tvDias        = findViewById(R.id.tvDias);
 
         imgExercicios.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,12 +90,12 @@ public class Home extends AppCompatActivity {
     }
     private void Progresso(int dias){
         progressBar = findViewById(R.id.progressBar);
-        textView = findViewById(R.id.tvDias);
-        handler = new Handler();
+        textView    = findViewById(R.id.tvDias);
+        handler     = new Handler();
 
-        Date date = new Date();
+        Date date            = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("dd");
-        Status = Integer.parseInt(sdf.format(date));
+        Status               = Integer.parseInt(sdf.format(date));
 
         new Thread(new Runnable() {
             public void run() {

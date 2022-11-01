@@ -21,12 +21,12 @@ public class PesoAltura extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_peso_altura);
 
-        seta = findViewById(R.id.imgSeta);
-        edtPeso = findViewById(R.id.edtPesoo);
-        edtAltura = findViewById(R.id.edtAltura);
+        seta       = findViewById(R.id.imgSeta);
+        edtPeso    = findViewById(R.id.edtPesoo);
+        edtAltura  = findViewById(R.id.edtAltura);
         btnAvancar = findViewById(R.id.btnAvancar);
 
-        Intent intent = getIntent();
+        Intent intent     = getIntent();
         Bundle parametros = intent.getExtras();
 
         Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
@@ -40,7 +40,6 @@ public class PesoAltura extends AppCompatActivity {
                 }else{
                     usuario.setPeso(Float.parseFloat(edtPeso.getText().toString()));
                     usuario.setAltura(Float.parseFloat(edtAltura.getText().toString()));
-
                     intent.putExtra("usuario", usuario);
                     startActivity(intent);
                 }

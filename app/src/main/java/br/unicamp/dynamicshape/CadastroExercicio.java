@@ -1,15 +1,12 @@
 package br.unicamp.dynamicshape;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import retrofit2.Call;
@@ -17,7 +14,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class CadastroExercicio extends AppCompatActivity {
-    ImageView seta;
     Button btnAdicionar;
     EditText edtNome,edtQuantVezes,edtSessoes;
 
@@ -25,12 +21,10 @@ public class CadastroExercicio extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro_exercicio);
-        seta = findViewById(R.id.imgSeta);
-        edtNome = findViewById(R.id.edtNome);
-        seta = findViewById(R.id.imgSeta);
+        edtNome       = findViewById(R.id.edtNome);
         edtQuantVezes = findViewById(R.id.edtQuantVezes);
-        edtSessoes = findViewById(R.id.edtSessoes);
-        btnAdicionar = findViewById(R.id.btnAdicionar);
+        edtSessoes    = findViewById(R.id.edtSessoes);
+        btnAdicionar  = findViewById(R.id.btnAdicionar);
         Intent intent = getIntent();
 
         btnAdicionar.setOnClickListener(new View.OnClickListener() {
@@ -43,13 +37,6 @@ public class CadastroExercicio extends AppCompatActivity {
                     Toast.makeText(CadastroExercicio.this, "Preencha todos o nome do exercicio", Toast.LENGTH_LONG).show();
                 }
 
-            }
-        });
-        seta.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(CadastroExercicio.this,Exercicios.class);
-                startActivity(intent);
             }
         });
     }
