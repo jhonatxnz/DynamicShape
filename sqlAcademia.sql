@@ -40,6 +40,7 @@ create table Objetivo(
 create table Exercicios(
 [idExercicio] INT PRIMARY KEY NOT NULL identity, 
 [nome] VARCHAR (30) NULL,
+[desc] VARCHAR (60) NULL,
 [quantVezes] CHAR (2) NULL,
 [sessoes] CHAR (2) NULL,
 idAmbiente int foreign key references Ambiente(idAmbiente),
@@ -68,24 +69,24 @@ insert into Ambiente([local]) values('Academia')
 insert into Ambiente([local]) values('Casa')
 
 --4 EXERCICIO
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('PranchaFacil', 4, 5, 2, 1)
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('AgachamentoFacil', 3, 2, 2, 1)
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Leg 45ºFacil', 15, 3, 1, 1)
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Corrida EstacionadaFacil', 7, 3, 1, 2)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('PranchaFacil','Descrição da prancha facil', 4, 5, 2, 1)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('AgachamentoFacil','Descrição do agachamento facil', 3, 2, 2, 1)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Leg 45ºFacil','Descrição do Leg 45º facil', 15, 3, 1, 1)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Corrida EstacionadaFacil','Descrição da Corrida Estacionada facil', 7, 3, 1, 2)
 
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('PranchaMedio', 9, 6, 2, 1)
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('AgachamentoMedio', 8, 3, 2, 1)
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Leg 45ºMedio', 20, 3, 2, 1)
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Corrida EstacionadaMedio', 13, 4, 1, 2)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('PranchaMedio','Descrição da prancha medio', 9, 6, 2, 1)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('AgachamentoMedio','Descrição do agachamento medio', 8, 3, 2, 1)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Leg 45ºMedio','Descrição do Leg 45º medio', 20, 3, 2, 1)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Corrida EstacionadaMedio','Descrição da Corrida Estacionada medio', 13, 4, 1, 2)
 
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('PranchaDificil', 14, 7, 2, 1)
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('AgachamentoDificil', 13, 4, 2, 1)
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Leg 45ºDificil', 25, 5, 1, 1)
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Corrida EstacionadaDificil', 18, 5, 1, 2)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('PranchaDificil','Descrição da prancha dificil', 14, 7, 2, 1)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('AgachamentoDificil','Descrição do agachamento dificil', 13, 4, 2, 1)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Leg 45ºDificil','Descrição do Leg 45º dificil', 25, 5, 1, 1)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Corrida EstacionadaDificil','Descrição da Corrida Estacionada dificil', 18, 5, 1, 2)
 
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('AgachamentoPadrao', 1, 1, 2, 1)
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Leg 45ºPadrao',1, 1, 1, 1)
-insert into Exercicios([nome], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Corrida EstacionadaPadrao', 1, 1, 1, 2)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('AgachamentoPadrao','Descrição do agachamento padrao', 1, 1, 2, 1)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Leg 45ºPadrao','Descrição do Leg 45º padrao',1, 1, 1, 1)
+insert into Exercicios([nome], [desc], [quantVezes], [sessoes], [idAmbiente], [idObjetivo]) values ('Corrida EstacionadaPadrao','Descrição da Corrida Estacionada padrao', 1, 1, 1, 2)
 
 
 
@@ -111,4 +112,4 @@ DELETE FROM Usuario WHERE idConta =1
 
 drop table Exercicios
 
-SELECT DISTINCT nome FROM Exercicios where nome like '%Padrao%'
+SELECT DISTINCT nome,quantVezes,sessoes FROM Exercicios where nome like '%Facil%'
