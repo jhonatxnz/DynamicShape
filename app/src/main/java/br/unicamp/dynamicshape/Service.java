@@ -22,8 +22,8 @@ public interface Service {
     @POST("/api/academia/post")
     Call<Usuario> incluirUsuario(@Body Usuario usuario);
 
-    @PUT("/api/academia/put")
-    Call<Usuario> alterarUsuario(@Path("id") String id,@Body Usuario usuario);
+    @PUT("/api/academia/{email}")
+    Call<Usuario> alterarUsuario(@Path("email") String email,@Body Usuario usuario);
 
     @GET("/api/academia/delete/{id}")
     Call<Usuario> excluirUsuario(@Path("id") String id);

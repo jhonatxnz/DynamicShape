@@ -78,7 +78,9 @@ public class Home extends AppCompatActivity {
         btnMes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(Home.this,Calendario.class);
+                intent.putExtra("usuario", usuario);
                 startActivity(intent);
             }
         });

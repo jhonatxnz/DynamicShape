@@ -29,9 +29,11 @@ public class Usuario implements Serializable{
     private Integer objetivo;
     @SerializedName("tempo")
     private Integer tempo;
+    @SerializedName("image")
+    private String image;
 
 
-    public Usuario(String id, String nome, Integer idade, String telefone, String email, Float peso,Float altura, String senha, String imagem, Integer genero, Integer objetivo,Integer tempo) {
+    public Usuario(String id, String nome, Integer idade, String telefone, String email, Float peso,Float altura, String senha, String imagem, Integer genero, Integer objetivo,Integer tempo, String image) {
         this.id       = id;
         this.nome     = nome;
         this.idade    = idade;
@@ -44,6 +46,7 @@ public class Usuario implements Serializable{
         this.objetivo = objetivo;
         this.altura   = altura;
         this.tempo    = tempo;
+        this.image    = image;
     }
 
     public Usuario(String email,String senha){
@@ -118,12 +121,12 @@ public class Usuario implements Serializable{
         this.senha = senha;
     }
 
-    public String getImagem() {
-        return imagem;
+    public String getImage() {
+        return image;
     }
 
-    public void setImagem(String imagem) {
-        this.imagem = imagem;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Integer getGenero() {return genero;}

@@ -8,16 +8,23 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.service.controls.actions.FloatAction;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
+import java.util.Base64;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Calendario extends AppCompatActivity {
     FloatingActionButton btnImage,btnEscImage;
@@ -30,6 +37,13 @@ public class Calendario extends AppCompatActivity {
         btnImage = findViewById(R.id.btnAdicionarImagem);
         btnEscImage = findViewById(R.id.btnEscolherImagem);
         img = findViewById(R.id.ivFoto);
+
+        Intent intent     = getIntent();
+        Bundle parametros = intent.getExtras();
+
+        Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
+        intent.putExtra("usuario", usuario);
+
 
         btnImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +60,11 @@ public class Calendario extends AppCompatActivity {
         });
     }
     protected void onActivityResult(int requestCode,int resultCode,Intent dados) {
+        Intent intent     = getIntent();
+        Bundle parametros = intent.getExtras();
+
+        Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
+        intent.putExtra("usuario", usuario);
 
         super.onActivityResult(requestCode, resultCode, dados);
         if(requestCode == 1) { //funciona
@@ -58,8 +77,31 @@ public class Calendario extends AppCompatActivity {
                     byte [] fotoEmBytes;
                     ByteArrayOutputStream streamDaFotoEmBytes = new ByteArrayOutputStream();
 
+                    bitmap.compress(Bitmap.CompressFormat.PNG, 70,streamDaFotoEmBytes);
+                    fotoEmBytes = streamDaFotoEmBytes.toByteArray();
+                    String fotoEmString = Base64.getEncoder().encodeToString(fotoEmBytes);
+                    usuario.setImage(fotoEmString);
+                    System.err.println("Email: "+ usuario.getEmail());
+                    System.err.println("IMAGEM: "+ usuario.getImage());
 
+                    Service service = RetrofitConfig.getRetrofitInstance().create(Service.class);
+                    Call<Usuario> call = service.alterarUsuario(usuario.getEmail(), usuario);
+                    call.enqueue(new Callback<Usuario>() {
+                        @Override
+                        public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                            if(response.isSuccessful()){
+                                Toast.makeText(Calendario.this, "Deu certo", Toast.LENGTH_LONG).show();
+                            }
+                            else{
+                                Toast.makeText(Calendario.this, "Deu Errado", Toast.LENGTH_LONG).show();
+                            }
+                        }
 
+                        @Override
+                        public void onFailure(Call<Usuario> call, Throwable t) {
+                            Toast.makeText(Calendario.this, "Ocorre um erro de requisição no Node: " + t.toString(), Toast.LENGTH_LONG).show();
+                        }
+                    });
                 }
             }
         }
