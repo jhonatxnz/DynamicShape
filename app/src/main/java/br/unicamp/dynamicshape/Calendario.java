@@ -80,26 +80,57 @@ public class Calendario extends AppCompatActivity {
                     bitmap.compress(Bitmap.CompressFormat.PNG, 70,streamDaFotoEmBytes);
                     fotoEmBytes = streamDaFotoEmBytes.toByteArray();
                     String fotoEmString = Base64.getEncoder().encodeToString(fotoEmBytes);
-                    usuario.setImage(fotoEmString);
-                    System.err.println("Email: "+ usuario.getEmail());
-                    System.err.println("IMAGEM: "+ usuario.getImage());
+
 
                     Service service = RetrofitConfig.getRetrofitInstance().create(Service.class);
-                    Call<Usuario> call = service.alterarUsuario(usuario.getEmail(), usuario);
-                    call.enqueue(new Callback<Usuario>() {
-                        @Override
-                        public void onResponse(Call<Usuario> call, Response<Usuario> response) {
-                            if(response.isSuccessful()){
-                                Toast.makeText(Calendario.this, "Deu certo", Toast.LENGTH_LONG).show();
-                            }
-                            else{
-                                Toast.makeText(Calendario.this, "Deu Errado", Toast.LENGTH_LONG).show();
-                            }
-                        }
 
+                    Call<Usuario> call2 = service.getUsuarioByEmail(usuario.getEmail());
+                    call2.enqueue(new Callback<Usuario>() {
                         @Override
-                        public void onFailure(Call<Usuario> call, Throwable t) {
-                            Toast.makeText(Calendario.this, "Ocorre um erro de requisição no Node: " + t.toString(), Toast.LENGTH_LONG).show();
+                        public void onResponse(Call<Usuario> call2, Response<Usuario> response) {
+                            response.body().setImagem(fotoEmString);
+                            usuario.setImagem(response.body().getImagem());
+                            usuario.setNome(response.body().getNome());
+                            usuario.setIdade(response.body().getIdade());
+                            usuario.setTempo(response.body().getTempo());
+                            usuario.setEmail(response.body().getEmail());
+                            usuario.setPeso(response.body().getPeso());
+                            usuario.setAltura(response.body().getAltura());
+                            usuario.setSenha(response.body().getSenha());
+                            usuario.setGenero(response.body().getGenero());
+                            usuario.setObjetivo(response.body().getObjetivo());
+
+                            System.err.println("nome: "+ usuario.getNome());
+                            System.err.println("idade: "+ usuario.getIdade());
+                            System.err.println("tempo: "+ usuario.getTempo());
+                            System.err.println("email: "+ usuario.getEmail());
+                            System.err.println("peso: "+ usuario.getPeso());
+                            System.err.println("altura: "+ usuario.getAltura());
+                            System.err.println("senha: "+ usuario.getSenha());
+                            System.err.println("imagem: "+ usuario.getImagem());
+                            System.err.println("idGenero: "+ usuario.getGenero());
+                            System.err.println("idObjetivo: "+ usuario.getObjetivo());
+
+                            Call<Usuario> call = service.alterarUsuario(usuario.getEmail(), usuario);
+                            call.enqueue(new Callback<Usuario>() {
+                                @Override
+                                public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                                    if(response.isSuccessful()){
+                                        Toast.makeText(Calendario.this, "Deu certo", Toast.LENGTH_LONG).show();
+                                    }
+                                    else{
+                                        Toast.makeText(Calendario.this, "Deu Errado", Toast.LENGTH_LONG).show();
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<Usuario> call, Throwable t) {
+                                    Toast.makeText(Calendario.this, "Ocorre um erro de requisição no Node: " + t.toString(), Toast.LENGTH_LONG).show();
+                                }
+                            });
+                        }
+                        @Override
+                        public void onFailure(Call<Usuario> call2, Throwable t) {
                         }
                     });
                 }
