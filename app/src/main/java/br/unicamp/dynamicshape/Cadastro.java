@@ -35,7 +35,7 @@ public class Cadastro extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(Cadastro.this, Genero.class);
 
-                if(edtEmail.getText().length() == 0 ||
+                if(edtEmail.getText().length()      == 0 ||
                         edtNome.getText().length()  == 0 ||
                         edtSenha.getText().length() == 0 ||
                         edtIdade.getText().length() == 0){

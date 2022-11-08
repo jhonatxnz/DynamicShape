@@ -1,5 +1,6 @@
 package br.unicamp.dynamicshape;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -30,6 +31,18 @@ public class Calendario extends AppCompatActivity {
     FloatingActionButton btnImage,btnEscImage;
     ImageView img;
 
+    private Bitmap StringToBitMap(String encodedString){
+        try{
+            byte [] encodeByte = Base64.getDecoder().decode(encodedString);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+            return bitmap;
+        }
+        catch(Exception e){
+            e.getMessage();
+            return null;
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +57,27 @@ public class Calendario extends AppCompatActivity {
         Usuario usuario = (Usuario) getIntent().getSerializableExtra("usuario");
         intent.putExtra("usuario", usuario);
 
+        Service service = RetrofitConfig.getRetrofitInstance().create(Service.class);
+        service = RetrofitConfig.getRetrofitInstance().create(Service.class);
+
+        service.getUsuarioByEmail(usuario.getEmail()).enqueue(
+                new Callback<Usuario>() {
+                    @Override
+                    public void onResponse(Call<Usuario> call, Response<Usuario> response) {
+                        img.setImageBitmap(StringToBitMap(response.body().getImagem()));
+                    }
+
+                    @NonNull
+                    @Override
+                    protected Object clone() throws CloneNotSupportedException {
+                        return super.clone();
+                    }
+
+                    @Override
+                    public void onFailure(Call<Usuario> call, Throwable t) {
+                    }
+                }
+        );
 
         btnImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,6 +93,7 @@ public class Calendario extends AppCompatActivity {
             }
         });
     }
+
     protected void onActivityResult(int requestCode,int resultCode,Intent dados) {
         Intent intent     = getIntent();
         Bundle parametros = intent.getExtras();
@@ -81,15 +116,14 @@ public class Calendario extends AppCompatActivity {
                     fotoEmBytes = streamDaFotoEmBytes.toByteArray();
                     String fotoEmString = Base64.getEncoder().encodeToString(fotoEmBytes);
 
-
                     Service service = RetrofitConfig.getRetrofitInstance().create(Service.class);
 
                     Call<Usuario> call2 = service.getUsuarioByEmail(usuario.getEmail());
                     call2.enqueue(new Callback<Usuario>() {
                         @Override
                         public void onResponse(Call<Usuario> call2, Response<Usuario> response) {
-                            response.body().setImagem(fotoEmString);
-                            usuario.setImagem(response.body().getImagem());
+
+                            usuario.setImagem(fotoEmString);
                             usuario.setNome(response.body().getNome());
                             usuario.setIdade(response.body().getIdade());
                             usuario.setTempo(response.body().getTempo());
@@ -151,11 +185,7 @@ public class Calendario extends AppCompatActivity {
             }
         }
     }
-    public void TirarFoto(View view)
-    {
-        Intent intent = new Intent("android.media.action.IMAGE_CAPTURE");
-        startActivityForResult(intent,1);
-    }
+
     public void PegarImagem()
     {
 

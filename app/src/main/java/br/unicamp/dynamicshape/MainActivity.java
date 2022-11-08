@@ -59,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<Usuario> call, Response<Usuario> response) {
                 try {
                     if(response.isSuccessful()){
-
                         Intent intent = new Intent(MainActivity.this,Home.class);
                         intent.putExtra("usuario", usuario);
                         startActivity(intent);

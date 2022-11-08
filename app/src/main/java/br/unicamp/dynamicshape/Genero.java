@@ -42,7 +42,6 @@ public class Genero extends AppCompatActivity {
                 usuario.setGenero(1); // Rever
 
                 intent.putExtra("usuario", usuario);
-                System.err.println("Genero"+ usuario.getGenero());
                 startActivity(intent);
             }
         });
